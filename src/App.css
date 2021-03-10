@@ -1,38 +1,212 @@
-.App {
-  text-align: center;
+$desktop: 1200px;
+$laptop: 1024px;
+$tablet: 768px;
+$phone: 480px;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,800;1,300;1,400&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	background-color: #22254b;
+	color: white;
+	font-family: 'Poppins', 'sans-serif';
+}
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	background-color: #373b69;
+	text-align: center;
+	align-items: center;
+	padding: 0.3rem 2rem;
+	z-index: 1;
+	width: 100vw;
+	opacity: 0.9;
+	margin-bottom: 1rem;
+	font-size: 24px;
+	font-weight: 800;
+	letter-spacing: 2px;
+	text-transform: uppercase;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.pos {
+	position: fixed;
+	top: 0;
+	min-width: 100%;
+	
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar-2 {
+	display: flex;
+	position: relative;
+	height: 7rem;
+	justify-content: space-between;
+	background-color: #373b69;
+	text-align: center;
+	align-items: center;
+	padding: 0.7rem 2rem;
+	z-index: 1;
+	width: 100%;
+	opacity: 0.9;
+	font-size: 30px;
+	font-weight: 800;
+	letter-spacing: 2px;
+	text-transform: uppercase;
 }
 
-.App-link {
-  color: #61dafb;
+.movie-container {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 2.5rem 1.5rem;
+	height: auto;
+	margin: 0;
+	padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie {
+	margin: 1rem;
+	width: 150px;
+}
+
+.movie img {
+	max-width: 100%;
+}
+
+.movie-info h3{
+	font-size: 24px;
+	font-weight: 600;
+	min-width: 100%;
+	padding: 0.5rem;
+	border-radius: 5px;
+	background-color: #373b69;
+}
+
+
+
+.social {
+	position: absolute;
+	padding: 20px 0;
+	bottom: 0;
+	left: 5rem;
+	z-index: 10;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 1000;
+}
+.social li {
+	list-style: none;
+}
+.social li a {
+	display: inline-block;
+	margin-right: 20px;
+	filter: invert(1);
+	transform: scale(0.5);
+	transition: 0.5s;
+}
+.social li a:hover {
+	transform: scale(0.5) translateY(-15px);
+}
+
+.stores {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	padding: 30px 0;
+	bottom: 0;
+	right: 5rem;
+}
+
+.stores li {
+	list-style: none;
+}
+
+.stores li a {
+	display: flex;
+}
+.stores li a img {
+	width: 145px;
+	height: 40px;
+}
+
+.grid-2 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 1rem;
+}
+
+.btn {
+	display: inline-block;
+	background-color: #7d7e86;
+	list-style: none;
+	color: #fff;
+	padding: 0.5rem 1rem;
+	border-radius: 3px;
+	font-size: 1rem;
+	border: none;
+	cursor: pointer;
+	margin-right: 0.5rem;
+	transition: opacity 0.2s ease-in;
+	outline: none;
+	text-decoration: none;
+	font-size: 24px;
+	font-weight: 600;
+	transition: 0.1s;
+	text-transform: capitalize;
+	letter-spacing: 0;
+}
+
+.btn:hover {
+	font-size: 26px;
+}
+
+.linkbtn {
+	margin: 0 auto;
+	textDecoration: 'none'; 
+	color: '#fff'
+}
+
+.image1 {
+	background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/70deccb9-9b6c-4be1-b781-18dd1bcd9264/570588d9-3fe5-4048-8fb2-460283476f0c/IN-en-20210301-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+	position: fixed;
+	min-width: 100%;
+	min-height: 100%;
+	background-size: cover;
+	background-position: center;
+	box-shadow: inset -120px -150px 250px #000000;
+}
+
+/* Mobile Styles */
+@media (max-width: 700px) {
+	.grid-2 {
+		grid-template-columns: 1fr;
+	}
+
+	/* Navbar */
+	.navbar {
+		display: block;
+		text-align: center;
+	}
+
+	.navbar-2 {
+		display: inline-block;
+		text-align: center;
+	}
+
+	.linkbtn{
+		display: block;
+		text-align: center;
+	}
+
+	.navbar ul {
+		text-align: center;
+		justify-content: center;
+	}
 }

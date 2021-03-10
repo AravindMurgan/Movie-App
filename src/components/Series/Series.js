@@ -3,17 +3,17 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 
-const Movies = () => {
+const Series = () => {
 	let URL =
 		'https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json';
-	const [movies, setMovies] = useState([]);
+	const [series, setSeries] = useState([]);
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		setLoading(true);
 		const fetchData = async () => {
 			const res = await axios(URL);
-			setMovies(res.data.entries);
+			setSeries(res.data.entries);
 			setLoading(false);
 		};
 
@@ -21,7 +21,7 @@ const Movies = () => {
 	}, []);
 
 	//sorting//
-	movies.sort((a, b) => {
+	series.sort((a, b) => {
 		let nameA = a.title.toLowerCase().replace(/\s+/g, ''),
 			nameB = b.title.toLowerCase().replace(/\s+/g, '');
 		if (nameA < nameB)
@@ -31,35 +31,27 @@ const Movies = () => {
 		return 0; //default return value (no sorting)
 	});
 
-	// movies.filter((a)=> a.programType === 'movie').map(a=>{
-	// 	return <h3> {a.programType} </h3>
-	// })
-	// const movieOnly = movies
-	// 	.filter((a) => a.programType === 'movie')
-	// 	.map((a) => {
-	// 		console.log(a.programType);
-	// 		return <h3>{a.programType}</h3>;
-	// 	});
-
+	series.splice(21, series.length - 1);
 	return (
 		<div>
 			{!loading ? (
 				<div>
 					<div className='movie-container'>
 						<nav className='navbar'>
-							<p>Popular Movies</p>
+							<p>Popular Series</p>
 							<Link to='/' className='btn btn-dark '>
 								Home
 							</Link>
 						</nav>
-						{movies
-							.filter((a) => a.programType === 'movie')
-							.map((movie, index) => (
+
+						{series
+							.filter((a) => a.programType === 'series')
+							.map((serie, index) => (
 								<div key={index} className='movie'>
-									<img src={movie.images['Poster Art'].url} alt={movie.title} />
+									<img src={serie.images['Poster Art'].url} alt={serie.title} />
 
 									<div className='movie-info'>
-										<h3> {movie.programType} </h3>
+										<h3> {serie.programType} </h3>
 									</div>
 								</div>
 							))}
@@ -74,4 +66,4 @@ const Movies = () => {
 	);
 };
 
-export default Movies;
+export default Series;
