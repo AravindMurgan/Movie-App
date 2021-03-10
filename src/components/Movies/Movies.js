@@ -61,9 +61,10 @@ const Movies = () => {
 									<div className='movie-info'>
 										<h3> {movie.programType} </h3>
 									</div>
+									
 								</div>
-							))
-							.splice(15, movies.length - 1)}
+								
+							))}
 					</div>
 
 					<Footer />
