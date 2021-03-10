@@ -13,7 +13,7 @@ const Series = () => {
 	useEffect(() => {
 		setLoading(true);
 		const fetchData = async () => {
-			const res = await axios(URL);
+			const res = await axios.get(URL);
 			setSeries(res.data.entries);
 			setLoading(false);
 		};
@@ -47,7 +47,7 @@ const Series = () => {
 
 						{series
 							.filter(
-								(a, b) => (a.programType === 'series' || b.releaseYear >= 2005)
+								(a) => (a.programType === 'series' && a.releaseYear >= 2010)
 							)
 							.map((serie, index) => (
 								<div key={index} className='movie'>

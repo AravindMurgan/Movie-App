@@ -12,7 +12,7 @@ const Movies = () => {
 	useEffect(() => {
 		setLoading(true);
 		const fetchData = async () => {
-			const res = await axios(URL);
+			const res = await axios.get(URL);
 			setMovies(res.data.entries);
 			setLoading(false);
 		};
