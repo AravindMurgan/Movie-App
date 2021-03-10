@@ -31,7 +31,7 @@ const Movies = () => {
 			return -1;
 		if (nameA > nameB) return 1;
 		return 0; //default return value (no sorting)
-	});
+	})
 
 	return (
 		<div>
@@ -45,7 +45,7 @@ const Movies = () => {
 							</Link>
 						</nav>
 						{movies
-							.filter((a, b) => a.programType === 'movie' || b.releaseYear)
+							.filter((a) => a.programType === 'movie')
 							.map((movie, index) => (
 								<div key={index} className='movie'>
 									<img src={movie.images['Poster Art'].url} alt={movie.title} />

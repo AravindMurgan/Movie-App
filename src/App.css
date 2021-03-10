@@ -163,11 +163,15 @@ body {
 	transition: opacity 0.2s ease-in;
 	outline: none;
 	text-decoration: none;
-	font-size: 24px;
+	font-size: 16px;
 	font-weight: 600;
 	transition: 0.1s;
 	text-transform: capitalize;
 	letter-spacing: 0;
+}
+
+.btn:hover {
+	background-color: #707179;
 }
 
 .linkbtn {
