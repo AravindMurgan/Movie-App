@@ -9,6 +9,7 @@ const Series = () => {
 	const [series, setSeries] = useState([]);
 	const [loading, setLoading] = useState(false);
 
+	//componentDidMount///
 	useEffect(() => {
 		setLoading(true);
 		const fetchData = async () => {
@@ -18,6 +19,7 @@ const Series = () => {
 		};
 
 		fetchData();
+		// eslint-disable-next-line
 	}, []);
 
 	//sorting//
@@ -31,7 +33,6 @@ const Series = () => {
 		return 0; //default return value (no sorting)
 	});
 
-	series.splice(21, series.length - 1);
 	return (
 		<div>
 			{!loading ? (
@@ -45,16 +46,21 @@ const Series = () => {
 						</nav>
 
 						{series
-							.filter((a) => a.programType === 'series')
+							.filter(
+								(a, b) => (a.programType === 'series' || b.releaseYear >= 2005)
+							)
 							.map((serie, index) => (
 								<div key={index} className='movie'>
 									<img src={serie.images['Poster Art'].url} alt={serie.title} />
 
 									<div className='movie-info'>
-										<h3> {serie.programType} </h3>
+										<h3>
+											{serie.programType} {serie.releaseYear}{' '}
+										</h3>
 									</div>
 								</div>
-							)).splice(0, series.length - 1)}
+							))
+							.slice(0, 21)}
 					</div>
 
 					<Footer />

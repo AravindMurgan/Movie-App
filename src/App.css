@@ -1,9 +1,6 @@
-$desktop: 1200px;
-$laptop: 1024px;
-$tablet: 768px;
-$phone: 480px;
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,800;1,300;1,400&display=swap');
+
+/* General */
 
 * {
 	margin: 0;
@@ -16,6 +13,9 @@ body {
 	color: white;
 	font-family: 'Poppins', 'sans-serif';
 }
+
+/* Navbar */
+
 .navbar {
 	display: flex;
 	justify-content: space-between;
@@ -37,7 +37,6 @@ body {
 	position: fixed;
 	top: 0;
 	min-width: 100%;
-	
 }
 
 .navbar-2 {
@@ -57,6 +56,8 @@ body {
 	letter-spacing: 2px;
 	text-transform: uppercase;
 }
+
+/* Rendering Container */
 
 .movie-container {
 	position: relative;
@@ -78,7 +79,7 @@ body {
 	max-width: 100%;
 }
 
-.movie-info h3{
+.movie-info h3 {
 	font-size: 24px;
 	font-weight: 600;
 	min-width: 100%;
@@ -87,7 +88,7 @@ body {
 	background-color: #373b69;
 }
 
-
+/* Social Icons */
 
 .social {
 	position: absolute;
@@ -114,6 +115,8 @@ body {
 	transform: scale(0.5) translateY(-15px);
 }
 
+/* Android,apple,microsoft */
+
 .stores {
 	display: flex;
 	justify-content: space-between;
@@ -136,11 +139,15 @@ body {
 	height: 40px;
 }
 
+/* Grid */
+
 .grid-2 {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-gap: 1rem;
 }
+
+/* Button */
 
 .btn {
 	display: inline-block;
@@ -163,15 +170,13 @@ body {
 	letter-spacing: 0;
 }
 
-.btn:hover {
-	font-size: 26px;
-}
-
 .linkbtn {
 	margin: 0 auto;
-	textDecoration: 'none'; 
-	color: '#fff'
+	text-decoration: 'none';
+	color: '#fff';
 }
+
+/* Home Page Img */
 
 .image1 {
 	background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/70deccb9-9b6c-4be1-b781-18dd1bcd9264/570588d9-3fe5-4048-8fb2-460283476f0c/IN-en-20210301-popsignuptwoweeks-perspective_alpha_website_small.jpg');
@@ -200,7 +205,7 @@ body {
 		text-align: center;
 	}
 
-	.linkbtn{
+	.linkbtn {
 		display: block;
 		text-align: center;
 	}

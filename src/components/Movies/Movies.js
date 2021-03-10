@@ -17,9 +17,11 @@ const Movies = () => {
 			setLoading(false);
 		};
 
+		
 		fetchData();
+		// eslint-disable-next-line 
 	}, []);
-
+	
 	//sorting//
 	movies.sort((a, b) => {
 		let nameA = a.title.toLowerCase().replace(/\s+/g, ''),
@@ -30,16 +32,6 @@ const Movies = () => {
 		if (nameA > nameB) return 1;
 		return 0; //default return value (no sorting)
 	});
-
-	// movies.filter((a)=> a.programType === 'movie').map(a=>{
-	// 	return <h3> {a.programType} </h3>
-	// })
-	// const movieOnly = movies
-	// 	.filter((a) => a.programType === 'movie')
-	// 	.map((a) => {
-	// 		console.log(a.programType);
-	// 		return <h3>{a.programType}</h3>;
-	// 	});
 
 	return (
 		<div>
@@ -53,18 +45,20 @@ const Movies = () => {
 							</Link>
 						</nav>
 						{movies
-							.filter((a) => a.programType == 'movie')
+							.filter((a, b) => a.programType === 'movie' || b.releaseYear)
 							.map((movie, index) => (
 								<div key={index} className='movie'>
 									<img src={movie.images['Poster Art'].url} alt={movie.title} />
 
 									<div className='movie-info'>
-										<h3> {movie.programType} </h3>
+										<h3>
+											{' '}
+											{movie.programType} {movie.releaseYear}{' '}
+										</h3>
 									</div>
-									
 								</div>
-								
-							))}
+							))
+							.slice(0, 21)}
 					</div>
 
 					<Footer />

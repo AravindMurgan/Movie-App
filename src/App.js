@@ -7,6 +7,7 @@ import Series from './components/Series/Series';
 const App = () => {
 	return (
 		<Router>
+
 			<div className='App'>
 				<Switch>
 					<Route exact path='/' component={Home} />
