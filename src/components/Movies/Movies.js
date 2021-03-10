@@ -45,15 +45,15 @@ const Movies = () => {
 							</Link>
 						</nav>
 						{movies
-							.filter((a) => a.programType === 'movie')
+							.filter((a) => a.programType === 'movie' && a.releaseYear >= 2010)
 							.map((movie, index) => (
 								<div key={index} className='movie'>
 									<img src={movie.images['Poster Art'].url} alt={movie.title} />
 
 									<div className='movie-info'>
 										<h3>
-											{' '}
-											{movie.programType} {movie.releaseYear}{' '}
+										
+											{movie.programType} {movie.releaseYear}
 										</h3>
 									</div>
 								</div>
