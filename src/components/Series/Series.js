@@ -54,7 +54,7 @@ const Series = () => {
 										<h3> {serie.programType} </h3>
 									</div>
 								</div>
-							))}
+							)).splice(0, series.length - 1)}
 					</div>
 
 					<Footer />

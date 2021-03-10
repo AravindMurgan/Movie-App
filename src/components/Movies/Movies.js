@@ -53,7 +53,7 @@ const Movies = () => {
 							</Link>
 						</nav>
 						{movies
-							.filter((a) => a.programType === 'movie')
+							.filter((a) => a.programType == 'movie')
 							.map((movie, index) => (
 								<div key={index} className='movie'>
 									<img src={movie.images['Poster Art'].url} alt={movie.title} />
@@ -62,7 +62,8 @@ const Movies = () => {
 										<h3> {movie.programType} </h3>
 									</div>
 								</div>
-							))}
+							))
+							.splice(15, movies.length - 1)}
 					</div>
 
 					<Footer />
