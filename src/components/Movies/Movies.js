@@ -23,7 +23,6 @@ const Movies = () => {
 
 		fetchData();
 		// eslint-disable-next-line
-		/// above line used to remove the dependcy warning-not suggested to use on larger application
 	}, []);
 
 	//sorting//
