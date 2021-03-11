@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 
 const Series = () => {
+	///API url and States//
+
 	let URL =
 		'https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json';
 	const [series, setSeries] = useState([]);
@@ -20,6 +22,7 @@ const Series = () => {
 
 		fetchData();
 		// eslint-disable-next-line
+		/// above line used to remove the dependcy warning-not suggested to use on larger application
 	}, []);
 
 	//sorting//
@@ -47,7 +50,7 @@ const Series = () => {
 
 						{series
 							.filter(
-								(a) => (a.programType === 'series' && a.releaseYear >= 2010)
+								(a) => a.programType === 'series' && a.releaseYear >= 2010
 							)
 							.map((serie, index) => (
 								<div key={index} className='movie'>

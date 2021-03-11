@@ -4,10 +4,14 @@ import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 
 const Movies = () => {
+	///API url and states///
+
 	let URL =
 		'https://raw.githubusercontent.com/StreamCo/react-coding-challenge/master/feed/sample.json';
 	const [movies, setMovies] = useState([]);
 	const [loading, setLoading] = useState(false);
+
+	///ComponentDidMount///
 
 	useEffect(() => {
 		setLoading(true);
@@ -17,11 +21,11 @@ const Movies = () => {
 			setLoading(false);
 		};
 
-		
 		fetchData();
-		// eslint-disable-next-line 
+		// eslint-disable-next-line
+		/// above line used to remove the dependcy warning-not suggested to use on larger application
 	}, []);
-	
+
 	//sorting//
 	movies.sort((a, b) => {
 		let nameA = a.title.toLowerCase().replace(/\s+/g, ''),
@@ -31,7 +35,7 @@ const Movies = () => {
 			return -1;
 		if (nameA > nameB) return 1;
 		return 0; //default return value (no sorting)
-	})
+	});
 
 	return (
 		<div>
@@ -52,7 +56,6 @@ const Movies = () => {
 
 									<div className='movie-info'>
 										<h3>
-										
 											{movie.programType} {movie.releaseYear}
 										</h3>
 									</div>
