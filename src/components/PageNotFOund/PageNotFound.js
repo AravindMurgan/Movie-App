@@ -4,7 +4,6 @@ const PageNotFound = () => {
 	return (
 		<div>
 			<div className='image2'></div>
-			
 		</div>
 	);
 };

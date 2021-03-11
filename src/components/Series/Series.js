@@ -22,7 +22,6 @@ const Series = () => {
 
 		fetchData();
 		// eslint-disable-next-line
-
 	}, []);
 
 	//sorting//

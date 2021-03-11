@@ -192,14 +192,15 @@ body {
 	box-shadow: inset -120px -150px 250px #000000;
 }
 
-.image2{
+/* Page Not Found */
+
+.image2 {
 	background-image: url('./images/2488756.jpg');
 	position: fixed;
 	min-width: 100%;
 	min-height: 100%;
 	background-size: cover;
 	background-position: center;
-	
 }
 
 /* Mobile Styles */
